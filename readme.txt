@@ -1,2 +1,2 @@
-Ñ§ÎÞÖ¹¾³
-
+study  good
+I am happy
