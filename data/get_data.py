@@ -6,15 +6,20 @@ class GetData():
     def __init__(self):
         self.oper_excel = operating_excel.OperatingExcel()
 
-    # 去获取excel中sheet的行数，即case数
+    # 获取excel中sheet的行数，即case数
     def get_case_lines(self):
         return self.oper_excel.get_lines()
+
+    # 获取case_id
+    def get_case_id(self, row):
+        col = int(data_set.get_id())
+        return self.oper_excel.get_cell_value(row, col)
 
 
     # 获取url
     def get_url(self, row):
         col = int(data_set.get_url())
-        url = self.oper_excel.get_cell_value(row,col)
+        url = self.oper_excel.get_cell_value(row, col)
         return url
 
 
@@ -43,6 +48,11 @@ class GetData():
         col = int(data_set.get_request_method())
         request_method = self.oper_excel.get_cell_value(row, col)
         return request_method
+
+    # 获取预期结果
+    def get_expect(self, row):
+        col = int(data_set.get_expect())
+        return self.oper_excel.get_cell_value(row, col)
 
     # 获取请求参数
     def get_data(self, row):

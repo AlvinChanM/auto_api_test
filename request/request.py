@@ -5,17 +5,17 @@ class RunMethod():
     def send_post(self,url,data,headers=None):
         res = None
         if headers != None:
-            res = requests.post(url=url, data=data, headers=headers)
+            res = requests.post(url=url, data=data, headers=headers, verify=False)
         else:
-            res = requests.post(url=url, data=data)
+            res = requests.post(url=url, data=data, verify=False)
         return res.json()
 
     def send_get(self, url , data=None, headers=None):
         res = None
         if headers !=None:
-            res = requests.get(url=url, data=data, headers=headers)
+            res = requests.get(url=url, data=data, headers=headers, verify=False)
         else:
-            res = requests.get(url=url, data=data)
+            res = requests.get(url=url, data=data, verify=False)
         return res.json()
 
     def run(self,url,method,data=None,headers=None):
@@ -25,6 +25,7 @@ class RunMethod():
             res = self.send_get(url,data,headers)
         # return str(res).decode('unicode_escape')
         return json.dumps(res,ensure_ascii=False, sort_keys=True, indent=2)
+
 
 
 
