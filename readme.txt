@@ -1,2 +1,3 @@
-study  good
-I am happy
+To be deligent.
+To be enthusiatic.
+To keep mind of peace.
