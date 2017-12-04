@@ -6,7 +6,7 @@ class OperatingExcel:
             self.file_name = file_name
             self.sheet_id = sheet_id
         else:
-            self.file_name = r"D:\auto_api_test\auto_api_test\case_data\interface.xlsx"
+            self.file_name = r"C:\Users\Administrator\Desktop\workspace\auto_api_test\case_data\interface.xlsx"
             self.sheet_id = 0
         self.data = self.get_data()
     # 获取sheets的内容
