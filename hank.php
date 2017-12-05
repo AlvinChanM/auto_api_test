@@ -1,2 +1,2 @@
 <?php
-echo 'hello world';
+echo 'hello world闯你妈个鬼·';
