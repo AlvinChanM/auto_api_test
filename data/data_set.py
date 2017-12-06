@@ -9,9 +9,10 @@ class global_var():
     HEADERS = '5'
     CASE_DEPEND = '6'
     DATA_DEPEND = '7'
-    REQUEST_DATA = '8'
-    EXPECT = '9'
-    RESULT ='10'
+    FIELD_DEPEND = '8'
+    REQUEST_DATA = '9'
+    EXPECT = '10'
+    RESULT ='11'
 
 # 获取CASE_ID
 def get_id():
@@ -40,6 +41,10 @@ def get_case_dependent():
 # 获取数据依赖
 def get_data_dependent():
     return  global_var.DATA_DEPEND
+
+# 获取字段依赖
+def get_field_dependent():
+    return global_var.FIELD_DEPEND
 
 # 获取请求数据
 def get_request_data():

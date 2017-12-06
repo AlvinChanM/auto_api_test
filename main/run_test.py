@@ -3,6 +3,7 @@ from request import request
 from data.get_data import GetData
 from tools import operating_json
 from tools import assert_value
+from data.dependent_data import DependentData
 
 
 class RunTest():
@@ -19,10 +20,18 @@ class RunTest():
             method = self.data.get_request_method(i)
             data = self.data.get_data(i)
             headers = self.data.get_headers(i)
+            depend_case = self.data.is_depend(i)
             expect = self.data.get_expect(i)
             case_id = self.data.get_case_id(i)
             if is_run:
-                res = self.run_method.run(url=url, method=method, data=data, headers=headers)
+                if depend_case != None:
+                    self.depend_data = DependentData()
+                    depend_response_data = self.depend_data.get_data_for_key()
+                    depend_field = self.data.get_depend_field(i)
+                    data[depend_field] = depend_response_data
+                    res = self.run_method.run(url=url, method=method, data=data, headers=headers)
+                else:
+                    res = self.run_method.run(url=url, method=method, data=data, headers=headers)
                 if self.ass_val.is_contain(expect, res):
                     return case_id+" success"
                 else:
