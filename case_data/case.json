@@ -1,1 +1,24 @@
-{"login":{"username":"18217379634","pword":"miaomiao"}}
+{
+  "login":
+  {"username":"18217379634",
+    "pword":"miaomiao123"
+  },
+  "CAuthorization":
+  {"CAuthorization":
+  "Bearer d1I5SjLMSU7uozagjOojeRl2jK6jRA0OY4gLZov28JPN2elFEUP4DdQcWD0Pqzc9LpcyvbsvffY+6EkVx1ET0PAzmjvM2AybDOnil+QYQu9Pe+InaD2nOPvsl6r9yH+VYo39OYyM358nkHNQ6ic1fEL9awdfvZ0VKoKQ5QMeuro="
+  },
+  "betchosen":{
+              "money":"2", "multi":"1", "issue":"2017145", "endTime": "2017-12-10 19:40:00",
+              "ctype": "create",
+              "buyPlatform":"0",
+              "codes":"05,09,10,13,18,23|11:1:1",
+              "lid": "51",
+              "playType": "0",
+              "betTnum": "1",
+              "isChase": "0",
+              "orderType": "0",
+              "isToken": "1",
+              "url": "order/create",
+              "isJson": "0"
+        }
+}

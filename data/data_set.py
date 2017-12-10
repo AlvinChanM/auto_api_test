@@ -7,19 +7,22 @@ class global_var():
     RUN = '3'
     REQUEST_METHOD = '4'
     HEADERS = '5'
-    CASE_DEPEND = '6'
-    DATA_DEPEND = '7'
-    FIELD_DEPEND = '8'
-    REQUEST_DATA = '9'
-    EXPECT = '10'
-    RESULT ='11'
+    COOKIE = '6'
+    CASE_DEPEND = '7'
+    DATA_DEPEND = '8'
+    FIELD_DEPEND = '9'
+    SECTION_DEPEND ='10'
+    REQUEST_DATA = '11'
+    EXPECT = '12'
+    RESULT ='13'
 
 # 获取CASE_ID
 def get_id():
     return global_var.ID
 
-# 获取URL
+  # 获取URL
 def get_url():
+
     return global_var.URL
 
 # 获取是否执行
@@ -34,6 +37,10 @@ def get_request_method():
 def get_headers():
     return  global_var.HEADERS
 
+# 获取cookie
+def get_cookie():
+    return global_var.COOKIE
+
 # 获取CASE依赖
 def get_case_dependent():
     return  global_var.CASE_DEPEND
@@ -45,6 +52,10 @@ def get_data_dependent():
 # 获取字段依赖
 def get_field_dependent():
     return global_var.FIELD_DEPEND
+
+# 获取依赖需要
+def get_section():
+    return global_var.SECTION_DEPEND
 
 # 获取请求数据
 def get_request_data():

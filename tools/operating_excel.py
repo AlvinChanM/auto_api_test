@@ -6,9 +6,10 @@ class OperatingExcel:
             self.file_name = file_name
             self.sheet_id = sheet_id
         else:
-            self.file_name = r"C:\Users\Administrator\Desktop\workspace\auto_api_test\case_data\interface.xlsx"
+            self.file_name = r"D:\auto_api_test\auto_api_test\case_data\interface.xlsx"
             self.sheet_id = 0
         self.data = self.get_data()
+
     # 获取sheets的内容
     def get_data(self):
         data = xlrd.open_workbook(self.file_name)
@@ -24,34 +25,16 @@ class OperatingExcel:
     def get_cell_value(self, row, col):
         return self.data.cell_value(row, col)
 
+    # 根据对应的case_id找到对应的所在行
+    def get_dependcase_row(self,case_id):
 
-    # 根据对应的case_id获得对应行的内容
-    def get_rows_data(self, case_id):
-        row_num = self.get_row_num(case_id)
-        row_value = self.get_row_value(row_num)
-        return row_value
-
-
-    # 根据对应的case_id找到对应的行号
-    def get_row_num(self,case_id):
-        num = 0
-        col_data = self.get_col_data()
+        # 获取依赖case_id所在列
+        col_data = self.data.col_values(0)
         for coldata in col_data:
-            if case_id in coldata:
-                return num
-            num += 1
+            if coldata == case_id:
+                row = col_data.index(coldata)
+        return row
 
-    # 根据行号，找到对应的内容
-    def get_row_value(self, row):
-        return self.data.row_values(row)
-
-    # 获取某一列的内容
-    def get_col_data(self, col=None):
-        if col != None:
-            cols = self.data.col_values(col)
-        else:
-            cols = self.data.col_values(0)
-        return cols
 
 if __name__ == '__main__':
     oe = OperatingExcel()
