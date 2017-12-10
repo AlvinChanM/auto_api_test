@@ -1,9 +1,9 @@
 # coding=utf-8
 from tools.operating_excel import OperatingExcel
 from data_get import  GetData
-from request.build_request import RunMethod
-import requests
-from jsonpath_rw import jsonpath, parse
+from request.build_request import run
+import json
+
 
 class DependentData():
     def __init__(self, row):
@@ -13,8 +13,6 @@ class DependentData():
 
     # 执行依赖case的请求，获取结果
     def run_dependent(self):
-        run_method = RunMethod()
-
         # 获取依赖case_id
         depend_case_id = self.data.is_depend(self.row)
 
@@ -28,9 +26,9 @@ class DependentData():
         if is_cookie:
             cookies = self.data.get_cookie()
         else:
-            cookies =None
-        res = requests.post( url=url, data=request_data, headers=headers, cookies=cookies)
-        return res.json()
+            cookies = None
+        res = run(method=method, url=url, data=request_data, headers=headers, cookies=cookies)
+        return json.loads(res)
 
     # 根据依赖数据的key去获取依赖字段，执行case
     def get_data_for_key(self):

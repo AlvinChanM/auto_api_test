@@ -1,16 +1,17 @@
 # coding=utf-8
-import  requests
+import requests
 from tools import operating_excel, operating_json
 import data_set
 
-class GetData():
+
+class GetData:
     def __init__(self):
         self.oper_excel = operating_excel.OperatingExcel()
         self.oper_json = operating_json.OperatingJson()
 
     # 获取excel中sheet的行数，即case数
-    def get_case_lines(self):
-        return self.oper_excel.get_lines()
+    def get_casenum(self):
+        return self.oper_excel.get_case_toal()
 
     # 获取case_id
     def get_case_id(self, row):
