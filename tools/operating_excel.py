@@ -31,7 +31,7 @@ class OperatingExcel:
     # 将实际结果写入excel
     def write_result(self, row, result):
         col = int(data_set.get_result())
-        read_data = xlrd.open_workbook(self.file_name, 'w+b')
+        read_data = xlrd.open_workbook(self.file_name, '')
         write_data = copy(read_data)
         sheet_data = write_data.get_sheet(0)
         sheet_data.write(row, col, result)

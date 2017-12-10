@@ -15,11 +15,12 @@ class RunTest:
         self.data = GetData()
         self.oper_excel = OperatingExcel()
         self.sendemail = SendEmail()
+
     def run(self):
-        rows_count = self.data.get_casenum()
+        total = self.data.get_casenum()
         pas_lst = []
         fai_lst = []
-        for i in range(1, rows_count):
+        for i in range(1, total):
             is_run = self.data.get_is_run(i)
             if is_run:
                 # 获取case所在行的数据
