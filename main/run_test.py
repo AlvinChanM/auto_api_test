@@ -7,7 +7,7 @@ from data.data_get import GetData
 from data.dependent_case import DependentData
 from tools.operating_excel import OperatingExcel
 from tools.SendEmail import SendEmail
-sys.path.append(r"D:\auto_api_test\auto_api_test")
+# sys.path.append(r"D:\auto_api_test\auto_api_test")
 
 
 class RunTest:
@@ -63,9 +63,9 @@ class RunTest:
                     print case_id + result
                     fai_lst.append(case_id)
                 self.oper_excel.write_result(i, result=result)
-        print fai_lst, pas_lst
+        # print fai_lst, pas_lst
         self.sendemail.send_main(pas_lst, fai_lst)
-        return "Mession Complete! Take attention to email"
+        return "Mession Completed! Email has been posted！"
 
 if __name__ == '__main__':
 

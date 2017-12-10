@@ -8,7 +8,9 @@
   "Bearer d1I5SjLMSU7uozagjOojeRl2jK6jRA0OY4gLZov28JPN2elFEUP4DdQcWD0Pqzc9LpcyvbsvffY+6EkVx1ET0PAzmjvM2AybDOnil+QYQu9Pe+InaD2nOPvsl6r9yH+VYo39OYyM358nkHNQ6ic1fEL9awdfvZ0VKoKQ5QMeuro="
   },
   "betchosen":{
-              "money":"2", "multi":"1", "issue":"2017145", "endTime": "2017-12-10 19:40:00",
+              "money":"2", "multi":"1",
+              "issue":"2017146",
+              "endTime": "2017-12-12 19:40:00",
               "ctype": "create",
               "buyPlatform":"0",
               "codes":"05,09,10,13,18,23|11:1:1",
