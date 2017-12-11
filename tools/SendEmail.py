@@ -5,23 +5,24 @@ from email.mime.text import MIMEText
 
 
 class SendEmail():
-    global email_host
-    global send_user
-    global password
-    global total
-    email_host = "smtp.163.com"
-    send_user = "miao564103484@163.com"
-    password = "miao920304?"
+    # global email_host
+    # global send_user
+    # global password
+    # global total
+    def __init__(self, email_host, send_user, password):
+        self.email_host = email_host
+        self.send_user = send_user
+        self.password = password
 
     def send_mail(self, user_list, sub, content):
-        user = "miao564103484"+"<"+send_user+">"
+        user = "miao564103484"+"<"+self.send_user+">"
         message = MIMEText(content, _subtype='plain', _charset='utf-8')
         message['Subject'] = sub
         message['From'] = user
         message['To'] = ";".join(user_list)
         server = smtplib.SMTP()
-        server.connect(email_host)
-        server.login(send_user, password)
+        server.connect(self.email_host)
+        server.login(self.send_user, self.password)
         server.sendmail(user, user_list, message.as_string())
         server.close()
 
@@ -37,5 +38,5 @@ class SendEmail():
         self.send_mail(user_list, sub, content)
 
 if __name__ == '__main__':
-    sendemail = SendEmail()
+    sendemail = SendEmail(email_host='smtp.exmail.qq.com', send_user='chenmiao@km.com', password='Miao@123')
     sendemail.send_main([1, 2, 3, 4], [2, 3, 4, 5, 6, 7])
