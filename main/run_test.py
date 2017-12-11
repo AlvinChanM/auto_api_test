@@ -64,7 +64,7 @@ class RunTest:
                     fai_lst.append(case_id)
                 self.oper_excel.write_result(i, result=result)
         # print fai_lst, pas_lst
-        if len(fai_lst) !=0:
+        if len(fai_lst) != 0:
             self.sendemail.send_main(pas_lst, fai_lst)
             if len(fai_lst) == 1:
                 return "Warning! %d Error in Testcases.Email is being posted!" % len(fai_lst)
