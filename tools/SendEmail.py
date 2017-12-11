@@ -5,15 +5,12 @@ from email.mime.text import MIMEText
 
 
 class SendEmail():
-    # global email_host
-    # global send_user
-    # global password
-    # global total
+
     def __init__(self, email_host, send_user, password):
         self.email_host = email_host
         self.send_user = send_user
         self.password = password
-
+    # 连接邮箱服务器，登录
     def send_mail(self, user_list, sub, content):
         user = "miao564103484"+"<"+self.send_user+">"
         message = MIMEText(content, _subtype='plain', _charset='utf-8')
@@ -21,11 +18,15 @@ class SendEmail():
         message['From'] = user
         message['To'] = ";".join(user_list)
         server = smtplib.SMTP()
+        # 连接邮箱服务器
         server.connect(self.email_host)
+        #发件人登录
         server.login(self.send_user, self.password)
+        # 收件人
         server.sendmail(user, user_list, message.as_string())
+        # 关闭连接
         server.close()
-
+    # 发送内容
     def send_main(self, pass_list, fail_list):
         pass_num = len(pass_list)
         fail_num = len(fail_list)

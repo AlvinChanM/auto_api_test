@@ -14,7 +14,7 @@ class RunTest:
     def __init__(self):
         self.data = GetData()
         self.oper_excel = OperatingExcel()
-        self.sendemail = SendEmail()
+        self.sendemail = SendEmail(email_host='smtp.exmail.qq.com', send_user='chenmiao@km.com', password='Miao@123')
 
     def run(self):
         total = self.data.get_casenum()
